@@ -1,0 +1,64 @@
+.c-works-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    margin: 0;
+    min-height: 120px;
+    max-height: 300px;
+    width: calc(100% / 12 * 3);
+
+    overflow: hidden;
+
+    @include md(width, 50%);
+    @include sm(width, 100%);
+
+    position: relative;
+
+    .blured {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background-color: $accent;
+      animation: upToDown 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      opacity: 0.6;
+
+      &::before {
+        content: url('/build/img/view.png');
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    &:hover {
+      .blured {
+        animation: downToUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          forwards;
+      }
+    }
+
+    @keyframes downToUp {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    @keyframes upToDown {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-100%);
+      }
+    }
+  }
+}

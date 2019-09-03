@@ -1,0 +1,39 @@
+.c-contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__fields {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__field {
+    width: calc(100% / 12 * 6 - 30px);
+    margin: 0 15px;
+
+    @include md(width, 100%);
+
+    input {
+      width: 100%;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      line-height: 26px;
+      padding: 15px 20px;
+      border-radius: 2px;
+      @include md(margin-bottom, 20px);
+    }
+  }
+
+  textarea {
+    width: calc(100% / 12 * 12 - 30px);
+    margin: 0 15px;
+    padding: 20px;
+    resize: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 26px;
+    min-height: 175px;
+  }
+}

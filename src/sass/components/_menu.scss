@@ -1,0 +1,100 @@
+.c-menu {
+  @include col();
+  @include size(8);
+
+  @include md(display, none);
+
+  display: flex;
+
+  &__item {
+    font-family: $base;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 42px;
+    color: $black;
+    white-space: nowrap;
+
+    @include md(font-size, 14px);
+
+    &.active,
+    &:hover {
+      text-decoration: none;
+      color: $accent;
+    }
+
+    &--mobile {
+      @extend .c-menu__item;
+
+      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-left: 0;
+      text-decoration: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+
+    background-color: $light-gray;
+    @include md(display, flex);
+
+    transition: opacity 0.3s ease-in-out;
+
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 90%;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__drawer {
+    position: relative;
+    display: none;
+    text-align: center;
+
+    @include col();
+    @include md(display, block);
+    @include size-md(2);
+    @include size-sm(12);
+
+    .ham {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform 400ms;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .hamRotate.active {
+      transform: rotate(45deg);
+    }
+    .hamRotate180.active {
+      transform: rotate(180deg);
+    }
+    .line {
+      fill: none;
+      transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+      stroke: #000;
+      stroke-width: 5.5;
+      stroke-linecap: round;
+    }
+    .ham1 .top {
+      stroke-dasharray: 40 139;
+    }
+    .ham1 .bottom {
+      stroke-dasharray: 40 180;
+    }
+    .ham1.active .top {
+      stroke-dashoffset: -98px;
+    }
+    .ham1.active .bottom {
+      stroke-dashoffset: -138px;
+    }
+  }
+}

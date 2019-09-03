@@ -1,0 +1,19 @@
+.c-main-logo {
+  @include col();
+  @include size(4);
+  @include size-md(10);
+  @include size-sm(12);
+  @include sm(justify-content, center);
+
+  display: flex;
+
+  &__img {
+    display: block;
+    width: 96px;
+    height: 60px;
+    background-image: url('/build/img/logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}

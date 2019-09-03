@@ -1,0 +1,6 @@
+.c-navbar {
+  @include row-flex();
+
+  align-items: center;
+  position: relative;
+}

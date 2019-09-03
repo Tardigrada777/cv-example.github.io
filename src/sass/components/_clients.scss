@@ -1,0 +1,20 @@
+.c-clients {
+  @include row-flex();
+
+  &__client-logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include col();
+    @include size(3);
+    @include size-md(6);
+    @include size-sm(12);
+
+    &.type {
+      &--microsoft {
+        background-image: url('/build/img/microsoft-logo.png');
+        height: 120px;
+      }
+    }
+  }
+}

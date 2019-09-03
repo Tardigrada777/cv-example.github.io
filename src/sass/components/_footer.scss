@@ -1,0 +1,24 @@
+.c-footer {
+  @include row-flex();
+  align-items: center;
+
+  &__copyright {
+    @include col();
+    @include size(9);
+    @include size-md(6);
+    @include size-sm(12);
+    @include sm(text-align, center);
+    @include sm(margin-bottom, 15px);
+  }
+
+  &__social {
+    @include col();
+    @include size(3);
+    @include size-md(6);
+    @include size-sm(12);
+    @include sm(justify-content, center);
+
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,24 @@
+.c-video {
+  position: relative;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__ration {
+    /* 16:9 100*16/9 */
+    padding-top: 56.25%;
+    height: 0;
+  }
+
+  &__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    background-color: red;
+  }
+}

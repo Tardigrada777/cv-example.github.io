@@ -1,0 +1,40 @@
+// Settings imports
+@import './settings/smart-grid';
+@import './settings/colors.scss';
+@import './settings/maps.scss';
+@import './settings/fonts.scss';
+@import './settings/indentation.scss';
+@import './settings/typography.scss';
+@import './settings/utils.scss';
+@import './settings/sizes';
+
+// Tools imports
+
+// Generic imports
+@import './generic/reset';
+@import './generic/common';
+
+// Elements imports
+
+// Objects imports
+
+// Components imports
+@import './components/button';
+@import './components/main-logo';
+@import './components/heading';
+@import './components/project-icon';
+@import './components/progress';
+@import './components/social-icon';
+
+@import './components/navbar';
+@import './components/menu';
+@import './components/header';
+@import './components/project-list';
+@import './components/skills';
+@import './components/footer';
+@import './components/clients';
+@import './components/contact-form';
+@import './components/works-list';
+@import './components/video';
+
+// Utilities imports
