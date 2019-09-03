@@ -69,15 +69,19 @@ function imageMinify() {
 
 function html() {
   return gulp
-    .src('./*.html')
+    .src('./src/*.html')
     .pipe(gulp.dest('./build'))
     .pipe(browserSync.stream());
+}
+
+function github() {
+  return gulp.src('./build/**/*.*').pipe(gulp.dest('./docs'));
 }
 
 function watch() {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './build'
     },
     notify: false,
 
@@ -86,7 +90,7 @@ function watch() {
   });
   gulp.watch('./src/sass/**/*.scss', styles);
   gulp.watch('./src/js/**/*.js', scripts);
-  gulp.watch('./*.html', html);
+  gulp.watch('./src/index.html', html);
 }
 
 gulp.task('styles', styles);
@@ -96,7 +100,8 @@ gulp.task('image:min', imageMinify);
 gulp.task('scripts', scripts);
 gulp.task(
   'build',
-  gulp.series(clean, gulp.parallel(styles, scripts, imageMinify))
+  gulp.series(clean, gulp.parallel(styles, scripts, imageMinify), html)
 );
 
 gulp.task('dev', gulp.series('build', 'watch'));
+gulp.task('github-pages:build', gulp.series('build', html, github));

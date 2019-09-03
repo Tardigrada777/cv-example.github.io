@@ -13,7 +13,7 @@
     @include md(margin-bottom, 30px);
   }
   &__photo {
-    background-image: url('/build/img/person_photo.png');
+    background-image: url('../img/person_photo.png');
     background-size: contain;
     background-repeat: no-repeat;
     height: auto;

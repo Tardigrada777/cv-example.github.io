@@ -58,6 +58,16 @@
     }
   }
 
+  &.decor {
+    &--none {
+      text-decoration: none;
+    }
+
+    &--under {
+      text-decoration: underline;
+    }
+  }
+
   /* Стиль начертания */
   /* <div class="text style--italic"></div> */
   &.style {

@@ -10,7 +10,7 @@
     @include md(margin-bottom, 50px);
     @include md(height, 175px);
 
-    background-image: url('/build/img/laptop.png');
+    background-image: url('../img/laptop.png');
     background-size: contain;
     height: 235px;
     background-repeat: no-repeat;

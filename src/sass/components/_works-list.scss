@@ -27,7 +27,7 @@
       opacity: 0.6;
 
       &::before {
-        content: url('/build/img/view.png');
+        content: url('../img/view.png');
         width: 100px;
         height: 100px;
         position: absolute;
